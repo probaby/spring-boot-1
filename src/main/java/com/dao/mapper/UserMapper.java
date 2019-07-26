@@ -3,8 +3,6 @@ package com.dao.mapper;
 import com.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,7 +11,6 @@ import java.util.List;
  * @data 创建时间：2019/7/23 13:06
  */
 
-@Component
 @Mapper
 public interface UserMapper {
 
@@ -26,10 +23,14 @@ public interface UserMapper {
 //    @Select("SELECT * FROM USER ")
 //    public abstract User queryAllUser();
 
-    @Select("SELECT * FROM user WHERE id = #{id}")
+//    @Select("SELECT * FROM user WHERE id = #{id}")
+//    public User GetUserByID(@Param("id") int id);
+//
+//    @Select("SELECT * FROM user ")
+//    public List<User> GetAllUser();
+
     public User GetUserByID(@Param("id") int id);
 
-    @Select("SELECT * FROM user ")
     public List<User> GetAllUser();
 
 }

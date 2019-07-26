@@ -14,15 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/baseControl")
 public class BaseControl {
 
-
     @Autowired
     private UserMapper userMapper;
 
     @RequestMapping(value = "/hello")
     public String sayHello(){
-//        userMapper.insert("winterchen", "123456", "12345678910");
-        User u = userMapper.GetUserByID(1234);
+        User u = userMapper.GetUserByID(1000);
         System.out.println(u);
-        return "hello";
+        return u.toString();
     }
 }
